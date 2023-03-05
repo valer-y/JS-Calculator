@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;400;500&display=swap');
+
+/* Variables */
+:root {
+    --color__operations-btn: #5a5b5c;
+    --color__num-btn: #757677;
+    --color__basic-operations-btn: #f1a23b;
+    --column-width: 3rem;
+    --column-gap: 1px;
+    --column-qty: calc(4);
+}
+
+html, body, main {
+    height:100%;
+    font-size: 1.3rem;
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+}
+
+
+main {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    color: white;
+    display: grid;
+    grid-template-columns: repeat(4, 3rem);
+    grid-template-rows: repeat(5, 3rem) ;
+    row-gap: 1px;
+    column-gap: 1px;
+}
+
+li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    cursor: pointer;
+}
+
+.calc-wrapper {
+    border-radius: 0.75rem;
+    overflow: hidden;
+    background-color: #48494a;
+    border: 1px solid #48494a;
+}
+
+.zero-btn {
+    grid-column: 1 / 3;
+}
+
+.num-btn {
+    background-color: var(--color__num-btn);
+}
+
+.operations-btn {
+    background-color: var(--color__operations-btn);
+}
+
+.basic-operations-btn {
+    background-color: #f1a23b;
+}
+
+
+/* Input block */
+.calc__input-block {
+    position: relative;
+}
+
+.calc-options {
+    display: grid;
+    grid-template-columns: repeat(3, 0.5rem);
+    column-gap: 0.3rem;
+    position: absolute;
+    top: 0.35rem;
+    left: 0.45rem;
+}
+
+.calc-options > div {
+    width: 0.5rem;
+    height: 0.5rem;
+    background-color: white;
+    border-radius: 50%;
+}
+
+.calc-options > div:nth-child(1) {
+    background-color: #ec695e;
+}
+
+.calc-options > div:nth-child(2) {
+    background-color: #f4bd4e;
+}
+
+.calc-options > div:nth-child(3) {
+    background-color: #60c454;
+}
+
+input {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    height: 5rem;
+    width: calc(var(--column-qty)*var(--column-width) + (var(--column-qty) - 1)*var(--column-gap));
+    font-weight: 200;
+    color: white;
+    font-size: 2.2rem;
+    padding: 1.5rem 0.5rem 0 1rem;
+    text-align: right;
+}
