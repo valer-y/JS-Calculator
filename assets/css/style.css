@@ -50,6 +50,7 @@ li {
     overflow: hidden;
     background-color: #48494a;
     border: 1px solid #48494a;
+    box-shadow: 10px 10px 2rem rgb(0 0 0 / 40%), 4px 2px 0.6rem rgb(0 0 0 / 30%);
 }
 
 .zero-btn {
