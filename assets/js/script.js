@@ -40,10 +40,12 @@ class Add {
 
 // Addition
 const calc = new Calculator();
+//eslint-disable-next-line no-unused-vars
 let test = calc.executeCommand(new Add(15));
 console.log(calc.value, ' ', calc.history);
 
 // Undo Addition
+//eslint-disable-next-line no-unused-vars
 let testUndo = calc.executeCommand(new Add(25));
 console.log(calc.value, ' ', calc.history);
 console.log('History', calc.undoCommand());
