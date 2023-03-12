@@ -9,6 +9,8 @@
 
 /* 3. Float numbers-operations round */
 
+/* 4. +/- functionality */
+
 class Calculator {
     constructor() {
         this.value = 0;
