@@ -5,6 +5,7 @@
     --color__operations-btn: #5a5b5c;
     --color__num-btn: #757677;
     --color__basic-operations-btn: #f1a23b;
+    --color__input-digits: #FFFFFF;
     --column-width: 3rem;
     --column-gap: 1px;
     --column-qty: calc(4);
@@ -29,7 +30,7 @@ ul {
     margin: 0;
     padding: 0;
     list-style-type: none;
-    color: white;
+    color: var(--color__input-digits);
     display: grid;
     grid-template-columns: repeat(4, 3rem);
     grid-template-rows: repeat(5, 3rem) ;
@@ -57,7 +58,7 @@ li {
     grid-column: 1 / 3;
 }
 
-.num-btn {
+.calc-btn {
     background-color: var(--color__num-btn);
 }
 
@@ -110,8 +111,12 @@ input {
     height: 5rem;
     width: calc(var(--column-qty)*var(--column-width) + (var(--column-qty) - 1)*var(--column-gap));
     font-weight: 200;
-    color: white;
+    color: var(--color__input-digits);
     font-size: 2.2rem;
     padding: 1.5rem 0.5rem 0 1rem;
     text-align: right;
+}
+
+input::placeholder {
+    color: var(--color__input-digits);;
 }
