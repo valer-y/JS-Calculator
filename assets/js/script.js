@@ -11,41 +11,82 @@
 
 /* 4. +/- functionality */
 
+
+
+// Command
 class Calculator {
     constructor() {
         this.value = 0;
-        this.history = [];
+        // Command operations
+        this.operations = [];
     }
 
-    executeCommand(command) {
-        this.value = command.execute(this.value);
-        this.history.push(this.value);
+    execute(operation) {
+        this.value = operation.execute(this.value);
+        this.operations.push(this.value);
     }
 
     undoCommand() {
-        this.history = this.history.slice(0, -1);
-        return this.history.pop();
+        this.operations = this.operations.slice(0, -1);
+        return this.operations.pop();
     }
 }
 
+// Concrete function
 class Add {
-    constructor(addValue) {
-        this.addValue = addValue;
+    constructor(arg) {
+        this.arg = arg;
     }
 
-    execute(currentValue) {
-        return currentValue + this.addValue;
+    execute(value) {
+        return value + this.arg;
     }
 }
 
 // Addition
 const calc = new Calculator();
 //eslint-disable-next-line no-unused-vars
-let test = calc.executeCommand(new Add(15));
-console.log(calc.value, ' ', calc.history);
+let test = calc.execute(new Add(15));
+console.log(calc.value, ' ', calc.operations);
 
 // Undo Addition
 //eslint-disable-next-line no-unused-vars
-let testUndo = calc.executeCommand(new Add(25));
-console.log(calc.value, ' ', calc.history);
+let testUndo = calc.execute(new Add(25));
+console.log(calc.value, ' ', calc.operations);
 console.log('History', calc.undoCommand());
+
+
+const z = new Calculator();
+
+
+console.log('======================');
+
+
+class Operations {
+    constructor(value = 0) {
+        this.value = value;
+    }
+
+    add(arg) {
+        this.value = this.value + arg;
+        return this.value;
+    }
+
+}
+
+class Calc extends Operations {
+    constructor(subject) {
+        super();
+        this.subject = subject;
+    }
+
+}
+
+let x = new Calc();
+console.log(x.add(2));
+console.log(x.add(2));
+
+console.log('=====================');
+
+
+
